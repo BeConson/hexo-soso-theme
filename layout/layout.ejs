@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+</head>
+<body>
+
+    layout.ejs : 全局布局文件  <br>
+
+    <%- include("index.ejs") %> <br>
+    <%- include("post.ejs") %>
+		
+	<br><br>
+	
+	    <% site.posts.forEach(function(post){ %>
+	        <%- post.path %>
+	        <br />
+	        <%- post.slug %>
+	        <br />
+	        <%- post._id %>
+	        <br />
+	        <%- post.title %>
+	        <br />
+	        <%- post.date %>
+	        <br />
+	        <a href="/<%- post.path %>"><%- post.title %></a>
+	    <% }); %>
+		
+</body>
+</html>
+
